@@ -19,3 +19,6 @@ class Vector(object):
 
     def __eq__(self, v):
         return self.coordinates == v.coordinates
+
+vector1 = Vector([1, 2, 3])
+print vector1
