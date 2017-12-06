@@ -37,6 +37,18 @@ class Vector {
             });
             return new Vector(product);
         }
+
+        this.getMagnitude = () => {
+            const magnitude = Math.sqrt(this.coordinates.reduce((e, i) => {
+                return e + i;
+            }), 0);
+            return magnitude;
+        }
+
+        this.normalize = () => {
+            const magnitude = this.getMagnitude();
+            return this.scalarMultiply(1 / magnitude);
+        }
     }
 }
 
@@ -56,4 +68,8 @@ let vector8 = vector5.scalarMultiply(7.41);
 vector6.print();
 vector7.print();
 vector8.print();
+
+let vector9 = new Vector([1,1,1]);
+console.log(vector9.getMagnitude());
+console.log(vector9.normalize().coordinates);
 
